@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OpenVision</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0c041a, #1a0833);
+      color: #e0cfff;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 30%, rgba(106, 48, 147, 0.15), transparent 40%),
+                  radial-gradient(circle at 70% 70%, rgba(155, 89, 182, 0.1), transparent 45%);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 650px;
+      padding: 40px;
+      background: rgba(18, 8, 36, 0.65);
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(138, 64, 195, 0.4);
+      box-shadow: 0 0 30px rgba(106, 48, 147, 0.4);
+      animation: float 8s infinite ease-in-out;
+    }
+
+    .header {
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.4rem;
+      background: linear-gradient(90deg, #b388ff, #8a2be2, #d0b3ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 0.95rem;
+      color: #a98ec9;
+    }
+
+    #message {
+      font-size: 1.4rem;
+      margin: 40px 0;
+      min-height: 60px;
+      line-height: 1.5;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+    }
+
+    .error-form {
+      margin-top: 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .error-form.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .error-form input {
+      width: 100%;
+      padding: 14px;
+      margin: 12px 0;
+      background: rgba(22, 10, 56, 0.8);
+      border: 1px solid #5a3e99;
+      border-radius: 8px;
+      color: #f0e1ff;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .error-form input:focus {
+      border-color: #b388ff;
+      box-shadow: 0 0 0 3px rgba(179, 136, 255, 0.3);
+    }
+
+    .error-form button {
+      background: linear-gradient(135deg, #6a3093, #a052d9);
+      color: white;
+      padding: 13px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      animation: pulse 2s infinite;
+    }
+
+    .error-form button:hover {
+      background: linear-gradient(135deg, #8a40c3, #b388ff);
+      transform: scale(1.03);
+      animation: none;
+    }
+
+    .error-form button:disabled {
+      background: #4a356a;
+      cursor: not-allowed;
+      transform: none;
+      animation: none;
+    }
+
+    /* Animações */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+
+    .glitch-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch-text::before,
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glitch-text::before {
+      color: #ff00c8;
+      animation: glitch-anim 3s infinite;
+      clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+      transform: translate(-2px, -2px);
+      opacity: 0.7;
+    }
+
+    .glitch-text::after {
+      color: #00fff7;
+      animation: glitch-anim 2s infinite reverse;
+      clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+      transform: translate(2px, 2px);
+      opacity: 0.7;
+    }
+
+    @keyframes glitch-anim {
+      0%, 100% { transform: translate(0); opacity: 0.7; }
+      20% { transform: translate(-3px, 3px); opacity: 0.4; }
+      40% { transform: translate(-3px, -3px); opacity: 0.9; }
+      60% { transform: translate(3px, 3px); opacity: 0.6; }
+      80% { transform: translate(3px, -3px); opacity: 0.8; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(179, 136, 255, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(179, 136, 255, 0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>OpenVision</h1>
+      <p>Site desenvolvido pela PlitDev</p>
+    </div>
+
+    <div id="message">Olá, estamos lhe verificando...</div>
+
+    <div class="error-form" id="errorForm">
+      <p>Falar sobre o erro:</p>
+      <input type="text" id="errorInput" placeholder="Descreva o que aconteceu..." maxlength="200" />
+      <br />
+      <button id="sendButton" onclick="sendError()">Enviar erro</button>
+    </div>
+  </div>
+
+  <script>
+    const messageEl = document.getElementById('message');
+    const errorFormEl = document.getElementById('errorForm');
+
+    // Após 30 segundos
+    setTimeout(() => {
+      // Animação de saída suave
+      messageEl.style.opacity = '0';
+      messageEl.style.transition = 'opacity 1s ease';
+
+      setTimeout(() => {
+        // Aplica o efeito glitch na nova mensagem
+        messageEl.innerHTML = '<span class="glitch-text" data-text="Desculpe, mas... você não tem permissão para entrar nesse site.">Desculpe, mas... você não tem permissão para entrar nesse site.</span>';
+        messageEl.style.opacity = '1';
+        messageEl.style.transition = 'opacity 1.2s ease';
+
+        // Mostra o formulário com animação
+        setTimeout(() => {
+          errorFormEl.classList.add('visible');
+        }, 600);
+      }, 1000);
+    }, 30000); // 30 segundos
+
+    function sendError() {
+      const input = document.getElementById('errorInput');
+      if (input.value.trim() === '') {
+        input.style.borderColor = '#ff4d94';
+        setTimeout(() => input.style.borderColor = '#5a3e99', 1500);
+        return;
+      }
+
+      const button = document.getElementById('sendButton');
+      button.disabled = true;
+      button.textContent = 'Erro mandado! Em breve iremos lhe responder.';
+      button.style.background = 'linear-gradient(135deg, #2e8b57, #3cb371)';
+      button.style.animation = 'none';
+    }
+  </script>
+</body>
+</html>
