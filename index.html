@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Lord Space - O maior servidor de giveaways de contas de Roblox do Discord. Desde 2019!">
-  <title>🌌 Lord Space | Giveaways de Contas de Roblox</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>OpenVision</title>
   <style>
-    /* Reset */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -15,604 +14,245 @@
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
-      background: #000;
-      color: #fff;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    h1, h2, h3, h4, .logo, .btn, .nav-links a, .countdown {
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    /* Fundo de partículas (CSS-only) */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 30%, rgba(255, 0, 100, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 80% 10%, rgba(0, 200, 255, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 50% 70%, rgba(180, 0, 255, 0.15) 0%, transparent 50%);
-      z-index: -2;
-    }
-
-    /* Estrelas animadas */
-    .stars {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .star {
-      position: absolute;
-      background: #fff;
-      border-radius: 50%;
-      animation: twinkle 3s infinite ease-in-out;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 1; }
-    }
-
-    /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0; width: 100%;
+      background: linear-gradient(135deg, #0c041a, #1a0833);
+      color: #e0cfff;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 5%;
-      z-index: 1000;
-      background: rgba(10, 10, 20, 0.8);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 0, 100, 0.3);
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      color: #ff0066;
-      text-shadow: 0 0 10px #ff0066;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.3s, transform 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #ff0066;
-      transform: scale(1.1);
-    }
-
-    /* Hero */
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      overflow: hidden;
       position: relative;
-      padding: 0 20px;
-      background: linear-gradient(135deg, #0a0115 0%, #1a0025 50%, #3a0040 100%);
     }
 
-    .hero::after {
-      content: '';
+    body::before {
+      content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('https://images.unsplash.com/photo-1614058585831-0a6d5f5c0e1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
-      background-size: cover;
-      opacity: 0.2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 30%, rgba(106, 48, 147, 0.15), transparent 40%),
+                  radial-gradient(circle at 70% 70%, rgba(155, 89, 182, 0.1), transparent 45%);
       z-index: -1;
-    }
-
-    .hero-content h1 {
-      font-size: 5rem;
-      margin-bottom: 1rem;
-      color: #fff;
-      text-shadow: 0 0 20px rgba(255, 0, 100, 0.8);
-    }
-
-    .hero-content p {
-      font-size: 1.4rem;
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      color: #ffcccc;
-    }
-
-    .btn {
-      background: #ff0066;
-      color: white;
-      padding: 15px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: all 0.4s;
-      display: inline-block;
-      box-shadow: 0 0 20px rgba(255, 0, 100, 0.5);
-    }
-
-    .btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(255, 0, 100, 0.6);
-      text-shadow: 0 0 10px white;
-    }
-
-    /* Seções */
-    .section {
-      padding: 6rem 10%;
     }
 
     .container {
-      max-width: 1400px;
-      margin: 0 auto;
+      max-width: 650px;
+      padding: 40px;
+      background: rgba(18, 8, 36, 0.65);
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(138, 64, 195, 0.4);
+      box-shadow: 0 0 30px rgba(106, 48, 147, 0.4);
+      animation: float 8s infinite ease-in-out;
     }
 
-    h2 {
-      font-size: 3.5rem;
-      text-align: center;
-      margin-bottom: 3rem;
-      color: #ff0066;
-      text-shadow: 0 0 15px rgba(255, 0, 100, 0.4);
+    .header {
+      margin-bottom: 30px;
     }
 
-    h3 {
-      color: #ff66cc;
-      margin-bottom: 1rem;
+    .header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.4rem;
+      background: linear-gradient(90deg, #b388ff, #8a2be2, #d0b3ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
     }
 
-    p {
-      font-size: 1.2rem;
-      line-height: 1.7;
-      color: #ddd;
-      margin-bottom: 1.5rem;
+    .header p {
+      font-size: 0.95rem;
+      color: #a98ec9;
     }
 
-    /* Roblox Cards */
-    .roblox-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      margin-top: 3rem;
+    #message {
+      font-size: 1.4rem;
+      margin: 40px 0;
+      min-height: 60px;
+      line-height: 1.5;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
     }
 
-    .card {
-      background: rgba(30, 5, 40, 0.7);
-      border: 1px solid #ff0066;
-      border-radius: 15px;
-      padding: 2rem;
-      width: 300px;
-      text-align: center;
-      transition: transform 0.4s, box-shadow 0.4s;
-      backdrop-filter: blur(10px);
+    .error-form {
+      margin-top: 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(255, 0, 100, 0.3);
+    .error-form.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .card img {
+    .error-form input {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
+      padding: 14px;
+      margin: 12px 0;
+      background: rgba(22, 10, 56, 0.8);
+      border: 1px solid #5a3e99;
+      border-radius: 8px;
+      color: #f0e1ff;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s;
     }
 
-    .robux-tag {
-      display: inline-block;
-      background: #00d4ff;
-      color: black;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: bold;
-      margin-top: 0.5rem;
+    .error-form input:focus {
+      border-color: #b388ff;
+      box-shadow: 0 0 0 3px rgba(179, 136, 255, 0.3);
     }
 
-    /* Eventos */
-    .events {
-      background: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-
-    .events::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(20, 0, 30, 0.85);
-      z-index: 0;
-    }
-
-    .events .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Sorteio ao vivo */
-    .giveaway-live {
-      background: linear-gradient(45deg, #3a0040, #600080);
-      text-align: center;
-      padding: 5rem 10%;
-      border-top: 3px solid #ff0066;
-      border-bottom: 3px solid #ff0066;
-    }
-
-    .giveaway-live h2 {
-      color: #ff0066;
-      font-size: 4rem;
-    }
-
-    .countdown {
-      font-size: 3rem;
-      color: #00d4ff;
-      margin: 1rem 0;
-    }
-
-    .winner {
-      font-size: 1.5rem;
-      color: #00ff88;
-      margin-top: 2rem;
-      font-weight: bold;
-    }
-
-    /* Avaliações */
-    .testimonials {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 3rem;
-    }
-
-    .testimonial {
-      background: rgba(30, 0, 50, 0.6);
-      padding: 2rem;
-      border-radius: 15px;
-      max-width: 400px;
-      border-left: 4px solid #ff0066;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .user {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: #ff0066;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    /* FAQ */
-    .faq-list {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      margin-bottom: 1.5rem;
-      border: 1px solid #ff0066;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      width: 100%;
-      text-align: left;
-      padding: 1.2rem;
-      background: rgba(255, 0, 100, 0.1);
+    .error-form button {
+      background: linear-gradient(135deg, #6a3093, #a052d9);
+      color: white;
+      padding: 13px 30px;
       border: none;
-      color: #fff;
-      font-size: 1.2rem;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.3s;
+      animation: pulse 2s infinite;
     }
 
-    .faq-question:hover {
-      background: rgba(255, 0, 100, 0.2);
+    .error-form button:hover {
+      background: linear-gradient(135deg, #8a40c3, #b388ff);
+      transform: scale(1.03);
+      animation: none;
     }
 
-    .faq-answer {
-      padding: 0 1.2rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
+    .error-form button:disabled {
+      background: #4a356a;
+      cursor: not-allowed;
+      transform: none;
+      animation: none;
     }
 
-    .faq-answer p {
-      padding: 1.2rem 0;
+    /* Animações */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
     }
 
-    .faq-item.active .faq-answer {
-      max-height: 300px;
-      padding: 0 1.2rem 1.2rem;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
 
-    /* Rodapé */
-    .footer {
-      background: #0a0015;
-      text-align: center;
-      padding: 3rem 10%;
-      border-top: 1px solid #ff0066;
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
     }
 
-    .footer-links {
-      margin: 1.5rem 0;
-      font-size: 1.1rem;
+    .glitch-text {
+      position: relative;
+      display: inline-block;
     }
 
-    .footer-links a {
-      color: #ff0066;
-      margin: 0 1rem;
-      text-decoration: none;
+    .glitch-text::before,
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
-    .footer-links a:hover {
-      text-decoration: underline;
+    .glitch-text::before {
+      color: #ff00c8;
+      animation: glitch-anim 3s infinite;
+      clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+      transform: translate(-2px, -2px);
+      opacity: 0.7;
     }
 
-    .copyright {
-      color: #888;
-      font-size: 0.9rem;
+    .glitch-text::after {
+      color: #00fff7;
+      animation: glitch-anim 2s infinite reverse;
+      clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+      transform: translate(2px, 2px);
+      opacity: 0.7;
     }
 
-    /* Responsivo */
-    @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 3rem;
-      }
-      .hero-content p {
-        font-size: 1.1rem;
-      }
-      h2 {
-        font-size: 2.5rem;
-      }
-      .nav-links {
-        gap: 1.2rem;
-        font-size: 0.9rem;
-      }
-      .section {
-        padding: 4rem 5%;
-      }
+    @keyframes glitch-anim {
+      0%, 100% { transform: translate(0); opacity: 0.7; }
+      20% { transform: translate(-3px, 3px); opacity: 0.4; }
+      40% { transform: translate(-3px, -3px); opacity: 0.9; }
+      60% { transform: translate(3px, 3px); opacity: 0.6; }
+      80% { transform: translate(3px, -3px); opacity: 0.8; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(179, 136, 255, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(179, 136, 255, 0); }
     }
   </style>
 </head>
 <body>
-
-  <!-- Fundo de estrelas -->
-  <div class="stars" id="stars"></div>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">🌌 Lord Space</div>
-    <ul class="nav-links">
-      <li><a href="#home">Início</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#giveaways">Giveaways</a></li>
-      <li><a href="#avaliacoes">Avaliações</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>LORD SPACE</h1>
-      <p>O maior servidor de giveaways de contas de Roblox do Discord. Desde 2019!</p>
-      <a href="https://discord.gg/seulink" target="_blank" class="btn">ENTRAR NO SERVIDOR</a>
+  <div class="container">
+    <div class="header">
+      <h1>OpenVision</h1>
+      <p>Site desenvolvido pela PlitDev</p>
     </div>
-  </section>
 
-  <!-- Sobre -->
-  <section id="sobre" class="section">
-    <div class="container">
-      <h2>O que é a Lord Space?</h2>
-      <p>
-        A <strong>Lord Space</strong> é um servidor de Discord fundado em <strong>2019</strong>, 
-        dedicado exclusivamente a <strong>giveaways de contas de Roblox</strong> — com e sem Robux!
-      </p>
-      <p>
-        Reunimos milhares de jogadores em um ambiente seguro, divertido e justo. 
-        Aqui, você tem a chance real de ganhar contas com <strong>Robux, itens raros, VIPs e muito mais</strong>.
-      </p>
-      <p>
-        Todos os sorteios são feitos com <strong>transparência total</strong>, 
-        usando sistemas aleatórios verificados e membros ativos do servidor.
-      </p>
+    <div id="message">Olá, estamos lhe verificando...</div>
 
-      <div class="roblox-cards">
-        <div class="card">
-          <img src="https://cdn.discordapp.com/attachments/123456789/roblox-account-1.png" alt="Conta Roblox com Robux">
-          <h3>Conta Premium + 500 Robux</h3>
-          <p>Sorteada toda semana!</p>
-          <span class="robux-tag">COM ROBUX</span>
-        </div>
-        <div class="card">
-          <img src="https://cdn.discordapp.com/attachments/123456789/roblox-account-2.png" alt="Conta Roblox sem Robux">
-          <h3>Conta com Itens Raros</h3>
-          <p>NFTs, chapéus exclusivos e mais!</p>
-          <span class="robux-tag" style="background:#ff9900">SEM ROBUX</span>
-        </div>
-        <div class="card">
-          <img src="https://cdn.discordapp.com/attachments/123456789/roblox-account-3.png" alt="Conta Roblox VIP">
-          <h3>VIP + Robux Ilimitados</h3>
-          <p>Prêmio especial mensal!</p>
-          <span class="robux-tag">COM ROBUX</span>
-        </div>
-      </div>
+    <div class="error-form" id="errorForm">
+      <p>Falar sobre o erro:</p>
+      <input type="text" id="errorInput" placeholder="Descreva o que aconteceu..." maxlength="200" />
+      <br />
+      <button id="sendButton" onclick="sendError()">Enviar erro</button>
     </div>
-  </section>
-
-  <!-- Giveaways AO VIVO -->
-  <section class="giveaway-live">
-    <h2>PRÓXIMO SORTEIO AO VIVO</h2>
-    <p>Participe do evento e ganhe uma conta de Roblox com Robux!</p>
-    <div class="countdown" id="countdown">Carregando...</div>
-    <p>Sorteio: Conta com 1.000 Robux + Itens Exclusivos</p>
-    <div class="winner" id="winner"></div>
-    <a href="https://discord.gg/seulink" target="_blank" class="btn">PARTICIPE AGORA</a>
-  </section>
-
-  <!-- Eventos -->
-  <section id="giveaways" class="section events">
-    <div class="container">
-      <h2>Como Funcionam os Giveaways?</h2>
-      <p>Nossos eventos são planejados para serem justos, divertidos e cheios de prêmios:</p>
-      
-      <div class="roblox-cards">
-        <div class="card">
-          <h3>🎯 Sorteios Semanais</h3>
-          <p>Contas com e sem Robux sorteadas entre membros ativos.</p>
-        </div>
-        <div class="card">
-          <h3>🎮 Eventos de Nível</h3>
-          <p>Suba de nível no servidor e ganhe pontos para sorteios.</p>
-        </div>
-        <div class="card">
-          <h3>🌌 Noite do Roblox</h3>
-          <p>Transmissões ao vivo, desafios e prêmios em tempo real.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Avaliações -->
-  <section id="avaliacoes" class="section">
-    <div class="container">
-      <h2>O que os membros dizem</h2>
-      <div class="testimonials">
-        <div class="testimonial">
-          <div class="user">
-            <div class="avatar">AG</div>
-            <strong>@AstroGamer</strong>
-          </div>
-          <p>"Ganhei uma conta com 500 Robux no sorteio semanal! Sério, é real!"</p>
-        </div>
-        <div class="testimonial">
-          <div class="user">
-            <div class="avatar">NQ</div>
-            <strong>@NebulaQueen</strong>
-          </div>
-          <p>"A melhor comunidade de Roblox que já entrei. Organização impecável."</p>
-        </div>
-        <div class="testimonial">
-          <div class="user">
-            <div class="avatar">CL</div>
-            <strong>@CosmicLeo</strong>
-          </div>
-          <p>"Já ganhei 3 contas! E todas funcionavam. Lord Space é confiável."</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="section">
-    <div class="container">
-      <h2>Perguntas Frequentes</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question">Como ganhar uma conta de Roblox com Robux?</button>
-          <div class="faq-answer">
-            <p>Participe dos eventos semanais e seja ativo no servidor. Os sorteios são automáticos para membros qualificados!</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">As contas são reais e seguras?</button>
-          <div class="faq-answer">
-            <p>Sim! Todas as contas são verificadas antes do sorteio. Nunca vendemos dados — apenas diversão.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Tem garantia de Robux?</button>
-          <div class="faq-answer">
-            <p>As contas com Robux são claramente marcadas. Sempre mostramos comprovantes antes do sorteio.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Posso doar contas para sorteios?</button>
-          <div class="faq-answer">
-            <p>Claro! Colaboradores podem doar contas e ganhar cargos especiais e recompensas.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Rodapé -->
-  <footer class="footer">
-    <p><strong>🌌 Lord Space</strong> — O universo dos giveaways de Roblox</p>
-    <div class="footer-links">
-      <a href="https://discord.gg/seulink" target="_blank">Discord</a>
-      <a href="#" target="_blank">Instagram</a>
-      <a href="#" target="_blank">Twitter</a>
-      <a href="#" target="_blank">YouTube</a>
-    </div>
-    <p class="copyright">&copy; 2019–2025 Lord Space. Todos os direitos reservados.</p>
-  </footer>
+  </div>
 
   <script>
-    // Gerar estrelas
-    function createStars() {
-      const stars = document.getElementById('stars');
-      const count = 150;
-      for (let i = 0; i < count; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        
-        // Posição aleatória
-        star.style.left = `${Math.random() * 100}%`;
-        star.style.top = `${Math.random() * 100}%`;
-        
-        // Tamanho aleatório
-        const size = Math.random() * 3;
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        
-        // Animação aleatória
-        star.style.animationDelay = `${Math.random() * 3}s`;
-        star.style.animationDuration = `${2 + Math.random() * 3}s`;
-        
-        stars.appendChild(star);
+    const messageEl = document.getElementById('message');
+    const errorFormEl = document.getElementById('errorForm');
+
+    // Após 30 segundos
+    setTimeout(() => {
+      // Animação de saída suave
+      messageEl.style.opacity = '0';
+      messageEl.style.transition = 'opacity 1s ease';
+
+      setTimeout(() => {
+        // Aplica o efeito glitch na nova mensagem
+        messageEl.innerHTML = '<span class="glitch-text" data-text="Desculpe, mas... você não tem permissão para entrar nesse site.">Desculpe, mas... você não tem permissão para entrar nesse site.</span>';
+        messageEl.style.opacity = '1';
+        messageEl.style.transition = 'opacity 1.2s ease';
+
+        // Mostra o formulário com animação
+        setTimeout(() => {
+          errorFormEl.classList.add('visible');
+        }, 600);
+      }, 1000);
+    }, 30000); // 30 segundos
+
+    function sendError() {
+      const input = document.getElementById('errorInput');
+      if (input.value.trim() === '') {
+        input.style.borderColor = '#ff4d94';
+        setTimeout(() => input.style.borderColor = '#5a3e99', 1500);
+        return;
       }
+
+      const button = document.getElementById('sendButton');
+      button.disabled = true;
+      button.textContent = 'Erro mandado! Em breve iremos lhe responder.';
+      button.style.background = 'linear-gradient(135deg, #2e8b57, #3cb371)';
+      button.style.animation = 'none';
     }
-
-    // Contagem regressiva para o próximo sorteio (ex: 7 dias)
-    function startCountdown() {
-      const now = new Date();
-      const nextWednesday = new Date(now);
-      nextWednesday.setDate(now.getDate() + (3 - now.getDay() + 7) % 7); // Próxima quarta
-      nextWednesday.setHours(20, 0, 0, 0); // 20:00
-
-      if (now > nextWednesday) {
-        nextWednesday.setDate(nextWednesday.getDate() + 7);
-      }
-
-      const countdownEl = document
+  </script>
+</body>
+</html>
